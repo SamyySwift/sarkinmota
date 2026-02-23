@@ -59,7 +59,7 @@ export default function InventoryCard({ car }: { car: CarEntry }) {
           <div className="absolute bottom-0 left-0 right-0 p-8 z-20 flex flex-col justify-end translate-y-4 transition-transform duration-500 ease-[0.16,1,0.3,1] group-hover:translate-y-0">
             
             <div className="flex justify-between items-end mb-4">
-              <h4 className="text-3xl text-white font-display tracking-wide truncate pr-4">{car.name}</h4>
+              <h4 className="text-3xl text-white font-display tracking-wide max-w-3xl pr-4">{car.name}</h4>
               <div className="flex gap-2">
                 <button 
                   onClick={handleAddToCart}
