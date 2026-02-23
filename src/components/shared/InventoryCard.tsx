@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Plus } from "lucide-react";
+import { ArrowUpRight, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import inventoryData from "@/data/inventory.json";
 import { useCart } from "@/context/CartContext";
@@ -66,7 +66,7 @@ export default function InventoryCard({ car }: { car: CarEntry }) {
                   className="w-12 h-12 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-110"
                   aria-label="Add to cart"
                 >
-                  <Plus className="w-5 h-5 transition-transform duration-300" />
+                  <ShoppingCart className="w-5 h-5 transition-transform duration-300" />
                 </button>
                 <div className="w-12 h-12 rounded-full border border-white/20 bg-black/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(199,164,61,0.3)]">
                   <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-black" />
