@@ -1,64 +1,75 @@
-# SarkinMota 🏎️✨
+# SarkinMota - Luxury Automotive Concierge
 
-**SarkinMota** is an ultra-premium, Awwwards-level web experience designed for an elite automotive concierge service. The application curates and showcases the world's most exclusive performance machines and limited-production hypercars. 
+SarkinMota is a highly-polished, premium web application designed to serve as an exclusive global concierge for high-net-worth automotive enthusiasts. Built with modern web technologies, it features an "Awwwards-level" aesthetic characterized by deep cinematic themes, advanced scroll-based animations, and sophisticated typography.
 
-It aims to provide a "Jesko Jets" level of digital luxury and discretion for high-net-worth clients, featuring immersive interactive elements, cinematic scroll effects, and an AI-powered personal vehicle finder.
+## Key Features
 
-## ✨ Key Features & Highlights
+- **AI-Powered Concierge**: A custom conversational interface built with the Vercel AI SDK and OpenRouter (Llama 3 70B). It replaces traditional search bars with an intelligent assistant that helps users find their exact specification or compare hypercars, complete with streaming responses and high-fidelity diagnostic UI elements.
+- **Cinematic Landing Experience**: 
+  - **Global Presence**: A seamless, infinite vertical ticker highlighting global delivery hubs, overlaid on a looping globe video with deep `<motion.div>` parallax effects.
+  - **Awwwards Sticky Scroll**: A custom "Why SarkinMota" section that maps deep vertical scrolling to a sleek horizontal timeline track, unveiling massive feature panels.
+- **Dynamic Inventory & Shop**: A deeply interactive vehicle catalog featuring popular high-end African market vehicles (G-Wagons, Land Cruisers, Range Rovers). The shop includes color filtering and leads to detailed specification pages.
+- **Awwwards-Level Footer**: A premium, architectural grid footer with magnetic hover interactions (`framer-motion`), ultra-fine borders, and a massive screen-spanning typography CTA.
+- **Light-Theme Testimonials**: Air-light cards with deep, dispersed drop shadows that elevate on hover, offset by massive watermark quotations, creating beautiful contrast against the site's primarily dark theme.
 
-*   **Cinematic "Jesko Jets" Aesthetic**: A meticulously crafted dark theme utilizing true black (`#000000`/`#020202`), high-contrast typography, and refined gold accents (`#C7A43D`).
-*   **Awwwards-Level Interactions**:
-    *   **Sticky Horizontal Scroll**: The *Why SarkinMota* section locks to the viewport and translates vertical scrolling into a smooth, horizontal tracking shot across massive philosophy panels.
-    *   **Immersive Global Presence**: A vertical city-ticker overlays a background globe video, anchored by deep-parallax "AFRICA" background typography.
-    *   **Magnetic Elements**: Custom `MagneticLink` and cursor-following micro-interactions offer a tactile, engineered feel to navigation and footers.
-    *   **Elevated Light-Theme Testimonials**: Air-light cards with precision drop-shadows that lift upon hover, demonstrating a sophisticated contrast alongside the dark sections.
-*   **AI Auto Concierge (OpenRouter Integration)**: A bespoke "Personal Finder" chat interface powered by an advanced LLM. It features a technical, cockpit-style UI that provides real-time, context-aware vehicle recommendations, diagnosing user needs through a conversational interface (streamed via the Vercel AI SDK).
-*   **Dynamic Inventory System**: High-quality vehicle displays complete with color swatches, 300-point inspection guarantees, and in-depth performance specifications.
+## Tech Stack
 
-## 🛠️ Technology Stack
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **AI Integration**: [Vercel AI SDK](https://sdk.vercel.ai/docs) + [OpenRouter](https://openrouter.ai/)
+- **Typography**: Custom `bauserif` font integration.
 
-*   **Framework**: [Next.js 14](https://nextjs.org/) (App Router, React Server Components)
-*   **Language**: [TypeScript](https://www.typescriptlang.org/)
-*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) with custom extended themes and granular animation utilities.
-*   **Animation**: [Framer Motion](https://www.framer.com/motion/) (Scroll-linked animations, parallax strings, magnetic hovers).
-*   **Icons**: [Lucide React](https://lucide.dev/)
-*   **AI Integration**: Vercel AI SDK + OpenRouter
+## Getting Started
 
-## 🚀 Getting Started
+### Prerequisites
 
-To run the SarkinMota development environment locally:
+Ensure you have Node.js (v18+) installed.
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/sarkinmota.git
-cd sarkinmota
-```
+### Installation
 
-### 2. Install dependencies
-```bash
-npm install
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/sarkinmota.git
+   cd sarkinmota
+   ```
 
-### 3. Set up environment variables
-Create a `.env.local` file in the root directory and add your OpenRouter API key for the AI Concierge functionality:
-```env
-OPENROUTER_API_KEY=your_openrouter_api_key_here
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### 4. Start the development server
-```bash
-npm run dev
-```
+3. Configure Environment Variables:
+   Create a `.env.local` file in the root directory and add your OpenRouter API key:
+   ```env
+   OPENROUTER_API_KEY=your_openrouter_api_key_here
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the live result.
+4. Run the Development Server:
+   ```bash
+   npm run dev
+   ```
 
-## 📂 Project Architecture
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-*   `src/app/`: Next.js App Router endpoints, global layouts, and unified pages.
-*   `src/components/home/`: The core modular sections of the homepage (Hero, AI Concierge, Testimonials, Global Presence, Why SarkinMota).
-*   `src/components/layout/`: Shared structural components like the dynamic HUD Navigation and the architectural Footer.
-*   `src/data/`: Static assets and JSON stores (e.g., `inventory.json`) used to populate the premium garage.
-*   `public/`: Static videos, custom fonts (`bauserif`), and placeholder imagery.
+## Project Structure
 
----
-*Designed & engineered for unparalleled excellence. SarkinMota — We don't sell cars. We curate power.*
+- `/src/app`: Next.js 14 App Router pages (`layout.tsx`, `page.tsx`, etc.)
+- `/src/components`: Reusable UI modules sorted by domain:
+  - `/home`: Homepage specific sections (`AICarMatch.tsx`, `GlobalPresence.tsx`, `WhySarkinMota.tsx`, `Testimonials.tsx`)
+  - `/layout`: Structural components (`Navbar.tsx`, `Footer.tsx`)
+- `/src/app/api`: Serverless API routes, including the `/chat` route for the AI concierge.
+- `/src/data`: Static JSON data serving as the inventory database.
+
+## Design Philosophy
+
+The aesthetic of SarkinMota is driven by strict design principles:
+- **Depth**: Extensive use of `framer-motion` for parallax arrays and complex multi-layer scroll tracking.
+- **Contrast**: Deep blacks (`#000000`, `#020202`) set against pristine whites and metallic gold accents (`#C7A43D`).
+- **Typography-First**: Removing heavy UI containers and letting massive, elegant typefaces define the structure of the page.
+- **Micro-Interactions**: Magnetic links, pulsing indicators, and smooth 700ms timing functions to ensure every hover state feels expensive and intentional.
+
+## License
+
+All rights reserved to SarkinMota.
