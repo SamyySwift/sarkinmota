@@ -1,0 +1,84 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import inventoryData from "@/data/inventory.json";
+
+export type CarEntry = typeof inventoryData[0];
+
+export default function InventoryCard({ car }: { car: CarEntry }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "center center"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [150, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  const carImage = car.image;
+
+  return (
+    <Link href={`/shop/${car.id}`}>
+      <motion.div 
+        ref={cardRef}
+        style={{ y, opacity }}
+        className="group flex flex-col cursor-pointer"
+      >
+        <div className="relative aspect-[4/5] bg-black overflow-hidden rounded-2xl will-change-transform">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 pointer-events-none transition-opacity duration-700 group-hover:opacity-70" />
+          
+          <div 
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-110 z-0 origin-center filter brightness-90 group-hover:brightness-100"
+            style={{ backgroundImage: `url(${carImage})`, backgroundColor: '#111' }}
+          />
+
+          <div className="absolute top-6 right-6 z-20 flex flex-col items-end gap-2">
+            <div className="px-4 py-1.5 bg-black/40 backdrop-blur-md border border-white/10 text-white text-[10px] font-bold tracking-widest uppercase rounded-full shadow-lg">
+              {car.year}
+            </div>
+          </div>
+          
+          <div className="absolute top-6 left-6 z-20">
+            <div className="px-4 py-1.5 bg-accent/90 text-black text-[10px] font-bold tracking-widest uppercase rounded-full shadow-[0_0_15px_rgba(199,164,61,0.4)]">
+              AVAILABLE
+            </div>
+          </div>
+
+          <div className="absolute bottom-0 left-0 right-0 p-8 z-20 flex flex-col justify-end translate-y-4 transition-transform duration-500 ease-[0.16,1,0.3,1] group-hover:translate-y-0">
+            
+            <div className="flex justify-between items-end mb-4">
+              <h4 className="text-3xl text-white font-display tracking-wide">{car.name}</h4>
+              <div className="w-12 h-12 rounded-full border border-white/20 bg-black/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(199,164,61,0.3)]">
+                <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-black" />
+              </div>
+            </div>
+            
+            <div className="text-2xl font-display text-accent mb-6 drop-shadow-[0_0_10px_rgba(199,164,61,0.4)]">{car.price}</div>
+            
+            <div className="flex items-center gap-6 text-[11px] text-white/70 tracking-widest uppercase font-semibold border-t border-white/10 pt-4">
+              <div className="flex flex-col gap-1">
+                <span className="text-white/40">Mileage</span>
+                <span>{car.mileage}</span>
+              </div>
+              <div className="w-px h-6 bg-white/10" />
+              <div className="flex flex-col gap-1">
+                <span className="text-white/40">Power</span>
+                <span>{car.specs.horsepower} HP</span>
+              </div>
+              <div className="w-px h-6 bg-white/10" />
+              <div className="flex flex-col gap-1">
+                <span className="text-white/40">Top Speed</span>
+                <span>{car.specs.topSpeed}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  );
+}
+
