@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
+import CartSidebar from "@/components/layout/CartSidebar";
 import { cn } from "@/lib/utils";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
   title: "SarkinMota | Elevated Automotive Experience",
@@ -17,10 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={cn("bg-background text-foreground antialiased selection:bg-accent selection:text-black")}>
-        <SmoothScroll>
-          <Navbar />
-          {children}
-        </SmoothScroll>
+        <CartProvider>
+          <SmoothScroll>
+            <Navbar />
+            {children}
+          </SmoothScroll>
+          <CartSidebar />
+        </CartProvider>
       </body>
     </html>
   );

@@ -2,14 +2,16 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Plus } from "lucide-react";
 import Link from "next/link";
 import inventoryData from "@/data/inventory.json";
+import { useCart } from "@/context/CartContext";
 
 export type CarEntry = typeof inventoryData[0];
 
 export default function InventoryCard({ car }: { car: CarEntry }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const { addToCart } = useCart();
   
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -20,6 +22,12 @@ export default function InventoryCard({ car }: { car: CarEntry }) {
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const carImage = car.image;
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(car);
+  };
 
   return (
     <Link href={`/shop/${car.id}`}>
@@ -51,9 +59,18 @@ export default function InventoryCard({ car }: { car: CarEntry }) {
           <div className="absolute bottom-0 left-0 right-0 p-8 z-20 flex flex-col justify-end translate-y-4 transition-transform duration-500 ease-[0.16,1,0.3,1] group-hover:translate-y-0">
             
             <div className="flex justify-between items-end mb-4">
-              <h4 className="text-3xl text-white font-display tracking-wide">{car.name}</h4>
-              <div className="w-12 h-12 rounded-full border border-white/20 bg-black/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(199,164,61,0.3)]">
-                <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-black" />
+              <h4 className="text-3xl text-white font-display tracking-wide truncate pr-4">{car.name}</h4>
+              <div className="flex gap-2">
+                <button 
+                  onClick={handleAddToCart}
+                  className="w-12 h-12 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-110"
+                  aria-label="Add to cart"
+                >
+                  <Plus className="w-5 h-5 transition-transform duration-300" />
+                </button>
+                <div className="w-12 h-12 rounded-full border border-white/20 bg-black/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(199,164,61,0.3)]">
+                  <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-black" />
+                </div>
               </div>
             </div>
             
