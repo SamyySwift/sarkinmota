@@ -428,7 +428,8 @@ export default function AICarMatch() {
                 {/* Main Chat Interface */}
                 <div 
                   ref={scrollRef}
-                  className="flex-grow min-h-0 overflow-y-auto px-10 py-12 space-y-12 scroll-smooth"
+                  data-lenis-prevent
+                  className="flex-grow min-h-0 overflow-y-auto px-10 py-12 space-y-12 scroll-smooth custom-scrollbar"
                 >
                   <AnimatePresence mode="popLayout">
                     {messages.length === 0 ? (
