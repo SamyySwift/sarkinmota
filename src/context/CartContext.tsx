@@ -61,10 +61,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const cartCount = cartItems.length;
   
-  // Helper to format price strings like "$3,200,000" to calculate total
-  const cartTotal = new Intl.NumberFormat('en-US', {
+  // Helper to format price strings like "₦270,000,000" to calculate total
+  const cartTotal = new Intl.NumberFormat('en-NG', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'NGN',
     maximumFractionDigits: 0,
   }).format(
     cartItems.reduce((total, item) => {

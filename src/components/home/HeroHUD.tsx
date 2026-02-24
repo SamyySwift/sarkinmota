@@ -146,7 +146,7 @@ function LeftHUD() {
     <div className="absolute bottom-[20%] left-12 flex flex-col items-start gap-4">
       <div className="flex items-center gap-2 text-accent">
         <CircleDot className="w-3 h-3 animate-pulse" />
-        <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Location: Dubai, UAE</span>
+        <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Location: Abuja, Nigeria</span>
       </div>
       <div className="relative">
         <canvas ref={canvasRef} className="opacity-60" />

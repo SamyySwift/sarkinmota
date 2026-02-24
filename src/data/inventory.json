@@ -5,8 +5,11 @@
     "make": "Mercedes-Benz",
     "year": 2024,
     "mileage": "150 km",
-    "price": "$180,000",
-    "color": { "name": "Obsidian Black", "hex": "#000000" },
+    "price": "₦270,000,000",
+    "color": {
+      "name": "Obsidian Black",
+      "hex": "#000000"
+    },
     "image": "https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 4.5,
@@ -22,8 +25,11 @@
     "make": "Ford",
     "year": 2020,
     "mileage": "25,000 km",
-    "price": "$35,000",
-    "color": { "name": "Magnetic Metallic", "hex": "#4b4b4b" },
+    "price": "₦52,500,000",
+    "color": {
+      "name": "Magnetic Metallic",
+      "hex": "#4b4b4b"
+    },
     "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 7.7,
@@ -39,8 +45,11 @@
     "make": "Toyota",
     "year": 2024,
     "mileage": "0 km",
-    "price": "$70,000",
-    "color": { "name": "Pearl White", "hex": "#f5f5f5" },
+    "price": "₦105,000,000",
+    "color": {
+      "name": "Pearl White",
+      "hex": "#f5f5f5"
+    },
     "image": "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 9.9,
@@ -56,8 +65,11 @@
     "make": "Toyota",
     "year": 2022,
     "mileage": "12,000 km",
-    "price": "$110,000",
-    "color": { "name": "Silver Metallic", "hex": "#c0c0c0" },
+    "price": "₦165,000,000",
+    "color": {
+      "name": "Silver Metallic",
+      "hex": "#c0c0c0"
+    },
     "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 6.7,
@@ -73,8 +85,11 @@
     "make": "Mercedes-Benz",
     "year": 2023,
     "mileage": "8,000 km",
-    "price": "$85,000",
-    "color": { "name": "Selenite Grey", "hex": "#5e6066" },
+    "price": "₦127,500,000",
+    "color": {
+      "name": "Selenite Grey",
+      "hex": "#5e6066"
+    },
     "image": "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 5.7,
@@ -90,8 +105,11 @@
     "make": "Land Rover",
     "year": 2022,
     "mileage": "5,000 km",
-    "price": "$150,000",
-    "color": { "name": "Belgravia Green", "hex": "#303932" },
+    "price": "₦225,000,000",
+    "color": {
+      "name": "Belgravia Green",
+      "hex": "#303932"
+    },
     "image": "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 4.6,
@@ -107,8 +125,11 @@
     "make": "Honda",
     "year": 2023,
     "mileage": "1,200 km",
-    "price": "$38,000",
-    "color": { "name": "Platinum White", "hex": "#f0f0f0" },
+    "price": "₦57,000,000",
+    "color": {
+      "name": "Platinum White",
+      "hex": "#f0f0f0"
+    },
     "image": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 6.6,
@@ -124,8 +145,11 @@
     "make": "Toyota",
     "year": 2024,
     "mileage": "500 km",
-    "price": "$36,000",
-    "color": { "name": "Celestial Silver", "hex": "#c6c6c6" },
+    "price": "₦54,000,000",
+    "color": {
+      "name": "Celestial Silver",
+      "hex": "#c6c6c6"
+    },
     "image": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fd?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 7.3,
@@ -141,8 +165,11 @@
     "make": "Xiaomi",
     "year": 2024,
     "mileage": "0 km",
-    "price": "$45,000",
-    "color": { "name": "Aqua Blue", "hex": "#00b2cc" },
+    "price": "₦67,500,000",
+    "color": {
+      "name": "Aqua Blue",
+      "hex": "#00b2cc"
+    },
     "image": "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 2.78,
@@ -158,8 +185,11 @@
     "make": "Tesla",
     "year": 2023,
     "mileage": "15,000 km",
-    "price": "$105,000",
-    "color": { "name": "Solid Black", "hex": "#111111" },
+    "price": "₦157,500,000",
+    "color": {
+      "name": "Solid Black",
+      "hex": "#111111"
+    },
     "image": "https://images.unsplash.com/photo-1536700503339-1e4b06520771?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 2.6,
@@ -175,8 +205,11 @@
     "make": "Avatr",
     "year": 2024,
     "mileage": "100 km",
-    "price": "$55,000",
-    "color": { "name": "Quantum Silver", "hex": "#a6a6a6" },
+    "price": "₦82,500,000",
+    "color": {
+      "name": "Quantum Silver",
+      "hex": "#a6a6a6"
+    },
     "image": "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 3.9,
@@ -192,8 +225,11 @@
     "make": "BMW",
     "year": 2023,
     "mileage": "18,000 km",
-    "price": "$125,000",
-    "color": { "name": "Marina Bay Blue", "hex": "#0f3152" },
+    "price": "₦187,500,000",
+    "color": {
+      "name": "Marina Bay Blue",
+      "hex": "#0f3152"
+    },
     "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 3.8,
@@ -209,8 +245,11 @@
     "make": "Tesla",
     "year": 2024,
     "mileage": "300 km",
-    "price": "$120,000",
-    "color": { "name": "Stainless Steel", "hex": "#e0e0e0" },
+    "price": "₦180,000,000",
+    "color": {
+      "name": "Stainless Steel",
+      "hex": "#e0e0e0"
+    },
     "image": "https://images.unsplash.com/photo-1580828369019-22204eb32152?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 2.6,
@@ -226,8 +265,11 @@
     "make": "Lexus",
     "year": 2023,
     "mileage": "2,000 km",
-    "price": "$130,000",
-    "color": { "name": "Eminent White Pearl", "hex": "#f8f8f8" },
+    "price": "₦195,000,000",
+    "color": {
+      "name": "Eminent White Pearl",
+      "hex": "#f8f8f8"
+    },
     "image": "https://images.unsplash.com/photo-1632245889029-e406faaa34cd?auto=format&fit=crop&q=80&w=1200",
     "specs": {
       "0_100": 6.9,

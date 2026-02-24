@@ -193,7 +193,7 @@ export default function AICarMatch() {
   }, [messages]);
 
   const quickPrompts = [
-    "Best performance machine under $500k?",
+    "Best performance machine under ₦500M?",
     "Which car has the highest top speed?",
     "Compare Phantom Obsidian and Valkyrie Ascendant.",
     "Fastest 0-100 km/h time?",

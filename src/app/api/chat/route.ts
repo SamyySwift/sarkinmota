@@ -33,7 +33,7 @@ Our exclusive inventory: ${inventoryContext}
 
 Guidelines:
 1. Be sophisticated, professional, and helpful.
-2. Recommend cars based on user budget ($) and specs.
+2. Recommend cars based on user budget (₦) and specs.
 3. Compare cars side-by-side if asked.
 4. If unavailable, suggest the closest match.
 5. Use markdown for readability (bolding, lists).
