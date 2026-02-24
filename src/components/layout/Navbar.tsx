@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Handbag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useCompare } from "@/context/CompareContext";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -23,10 +24,11 @@ function TopBar({ currentPath }: { currentPath: string }) {
     { name: "Home", href: "/" },
     { name: "Shop", href: "/shop" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" }
+    { name: "Compare", href: "/compare" }
   ];
 
   const { cartCount, setIsCartOpen } = useCart();
+  const { compareItems } = useCompare();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -60,6 +62,12 @@ function TopBar({ currentPath }: { currentPath: string }) {
                 )}
               >
                 {tab.name}
+                {tab.name === "Compare" && mounted && compareItems.length > 0 && (
+                  <span className="ml-2 inline-flex items-center justify-center w-4 h-4 text-[9px] font-bold bg-white/10 text-white rounded-full border border-white/20">
+                    {compareItems.length}
+                  </span>
+                )}
+                
                 {isActive && (
                   <motion.div 
                     layoutId="activeTab"

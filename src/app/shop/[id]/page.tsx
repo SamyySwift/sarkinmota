@@ -11,21 +11,26 @@ import {
   Cpu, 
   ShieldCheck, 
   Calendar,
-  Layers
+  Layers,
+  Scale
 } from "lucide-react";
 import Link from "next/link";
 import inventoryData from "@/data/inventory.json";
 import InventoryCard from "@/components/shared/InventoryCard";
 import { cn } from "@/lib/utils";
+import { useCompare } from "@/context/CompareContext";
 
 export default function CarDetailsPage() {
   const params = useParams();
   const router = useRouter();
   const id = params.id as string;
+  const { addToCompare, compareItems } = useCompare();
 
   const car = useMemo(() => {
     return inventoryData.find((c) => c.id === id);
   }, [id]);
+
+  const isComparing = car ? compareItems.some(item => item.id === car.id) : false;
 
   const suggestions = useMemo(() => {
     if (!car) return [];
@@ -132,6 +137,26 @@ export default function CarDetailsPage() {
                   <button className="w-full py-5 bg-accent text-black font-display tracking-widest uppercase text-sm rounded-2xl shadow-[0_10px_30px_rgba(199,164,61,0.3)] transition-all hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(199,164,61,0.4)] active:scale-95 flex items-center justify-center gap-3">
                     Place Acquisition Request
                     <ArrowUpRight className="w-4 h-4" />
+                  </button>
+
+                  <button 
+                    onClick={() => {
+                      if (!isComparing) {
+                        addToCompare(car);
+                        if (compareItems.length === 1) {
+                          router.push("/compare");
+                        }
+                      }
+                    }}
+                    className={cn(
+                      "w-full py-4 tracking-widest uppercase text-xs font-bold rounded-2xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3 border",
+                      isComparing 
+                       ? "bg-accent/20 border-accent/50 text-accent shadow-[0_0_20px_rgba(199,164,61,0.2)]" 
+                       : "bg-transparent border-white/20 text-white hover:bg-white/5"
+                    )}
+                  >
+                    <Scale className="w-4 h-4" />
+                    {isComparing ? "Added to Compare" : "Compare Vehicle"}
                   </button>
                </div>
             </motion.div>

@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import CartSidebar from "@/components/layout/CartSidebar";
 import { cn } from "@/lib/utils";
 import { CartProvider } from "@/context/CartContext";
+import { CompareProvider } from "@/context/CompareContext";
 
 export const metadata: Metadata = {
   title: "SarkinMota | Elevated Automotive Experience",
@@ -19,13 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={cn("bg-background text-foreground antialiased selection:bg-accent selection:text-black")}>
-        <CartProvider>
-          <SmoothScroll>
-            <Navbar />
-            {children}
-          </SmoothScroll>
-          <CartSidebar />
-        </CartProvider>
+        <CompareProvider>
+          <CartProvider>
+            <SmoothScroll>
+              <Navbar />
+              {children}
+            </SmoothScroll>
+            <CartSidebar />
+          </CartProvider>
+        </CompareProvider>
       </body>
     </html>
   );

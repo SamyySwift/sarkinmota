@@ -2,17 +2,23 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, ShoppingCart } from "lucide-react";
+import { ArrowUpRight, ShoppingCart, Scale } from "lucide-react";
 import Link from "next/link";
 import inventoryData from "@/data/inventory.json";
 import { useCart } from "@/context/CartContext";
+import { useCompare } from "@/context/CompareContext";
+import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 export type CarEntry = typeof inventoryData[0];
 
 export default function InventoryCard({ car }: { car: CarEntry }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   const { addToCart } = useCart();
+  const { addToCompare, compareItems } = useCompare();
   
+  const isComparing = compareItems.some(item => item.id === car.id);
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "center center"],
@@ -27,6 +33,19 @@ export default function InventoryCard({ car }: { car: CarEntry }) {
     e.preventDefault();
     e.stopPropagation();
     addToCart(car);
+  };
+
+  const handleAddToCompare = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (!isComparing) {
+      addToCompare(car);
+      if (compareItems.length === 1) {
+        // If there was 1 item before adding this one, we now have 2. Redirect!
+        router.push("/compare");
+      }
+    }
   };
 
   return (
@@ -61,6 +80,18 @@ export default function InventoryCard({ car }: { car: CarEntry }) {
             <div className="flex justify-between items-end mb-4">
               <h4 className="text-3xl text-white font-display tracking-wide max-w-3xl pr-4">{car.name}</h4>
               <div className="flex gap-2">
+                <button 
+                  onClick={handleAddToCompare}
+                  className={cn(
+                    "w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 hover:scale-110",
+                    isComparing 
+                      ? "bg-accent border-accent text-black shadow-[0_0_20px_rgba(199,164,61,0.3)]" 
+                      : "border-white/20 bg-black/40 backdrop-blur-md text-white hover:bg-white hover:border-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                  )}
+                  aria-label="Add to compare"
+                >
+                  <Scale className="w-5 h-5 transition-transform duration-300" />
+                </button>
                 <button 
                   onClick={handleAddToCart}
                   className="w-12 h-12 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-110"

@@ -82,7 +82,7 @@ export default function WhySarkinMota() {
               className="h-screen w-screen shrink-0 flex flex-col md:flex-row items-center justify-center md:justify-between p-8 md:p-24 lg:p-32 gap-12 relative overflow-hidden"
             >
               {/* Massive Number Watermark */}
-              <div className="absolute -top-10 -right-10 md:top-20 md:right-32 text-[20rem] md:text-[35rem] font-display font-black text-white/[0.02] leading-none select-none pointer-events-none">
+              <div className="absolute -top-10 -right-10 md:top-20 md:right-32 text-[20rem] md:text-[35rem] font-display font-black text-white/5 leading-none select-none pointer-events-none">
                 0{card.id}
               </div>
 
