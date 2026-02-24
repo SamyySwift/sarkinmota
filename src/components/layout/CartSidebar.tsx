@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function CartSidebar() {
   const { cartItems, isCartOpen, setIsCartOpen, removeFromCart, cartTotal } = useCart();
@@ -131,9 +132,13 @@ export default function CartSidebar() {
                   <span className="text-white text-xs font-bold tracking-[0.2em] uppercase">Total</span>
                   <span className="text-white text-lg font-display tracking-wider">{cartTotal}</span>
                 </div>
-                <button className="w-full py-4 bg-white text-black text-xs font-bold tracking-[0.2em] uppercase hover:bg-black hover:text-white border border-transparent hover:border-white transition-all duration-300">
+                <Link 
+                  href="/order"
+                  onClick={() => setIsCartOpen(false)}
+                  className="w-full py-4 bg-white text-black text-xs font-bold tracking-[0.2em] uppercase hover:bg-black hover:text-white border border-transparent hover:border-white transition-all duration-300 flex items-center justify-center"
+                >
                   Checkout
-                </button>
+                </Link>
               </div>
             )}
           </motion.div>

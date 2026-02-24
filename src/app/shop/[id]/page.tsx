@@ -134,10 +134,13 @@ export default function CarDetailsPage() {
                     <span className="text-white">Ready for Dispatch: 48 Hours</span>
                   </div>
                   
-                  <button className="w-full py-5 bg-accent text-black font-display tracking-widest uppercase text-sm rounded-2xl shadow-[0_10px_30px_rgba(199,164,61,0.3)] transition-all hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(199,164,61,0.4)] active:scale-95 flex items-center justify-center gap-3">
+                  <Link 
+                    href={`/order?id=${car.id}`}
+                    className="w-full py-5 bg-accent text-black font-display tracking-widest uppercase text-sm rounded-2xl shadow-[0_10px_30px_rgba(199,164,61,0.3)] transition-all hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(199,164,61,0.4)] active:scale-95 flex items-center justify-center gap-3"
+                  >
                     Place Acquisition Request
                     <ArrowUpRight className="w-4 h-4" />
-                  </button>
+                  </Link>
 
                   <button 
                     onClick={() => {

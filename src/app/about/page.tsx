@@ -144,7 +144,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. CORE PILLARS SECTION */}
-      <section className="relative z-20 bg-black py-32 px-6 border-y border-white/5 relative overflow-hidden">
+      <section className="relative z-20 bg-black py-32 px-6 border-y border-white/5 overflow-hidden">
         {/* Glow behind the pillars */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[800px] bg-accent/5 blur-[150px] rounded-full pointer-events-none" />
 
